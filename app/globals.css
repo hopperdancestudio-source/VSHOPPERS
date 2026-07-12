@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-ink font-body antialiased;
+  }
+
+  ::selection {
+    @apply bg-accent text-bg;
+  }
+
+  /* Visible keyboard focus everywhere — reference has no visible focus states,
+     but production quality requires this regardless of the source design. */
+  :focus-visible {
+    outline: 2px solid theme("colors.accent.DEFAULT");
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Shared "container" — matches the constrained content width used across
+     every section in the reference, while section backgrounds stay full-bleed. */
+  .container-base {
+    @apply mx-auto w-full max-w-container px-container-x-sm md:px-container-x;
+  }
+
+  .eyebrow {
+    @apply font-heading text-eyebrow uppercase tracking-[0.18em] text-accent;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-heading font-semibold
+      uppercase tracking-wide text-sm px-8 py-4 transition-colors duration-200 ease-reveal;
+  }
+
+  .btn-solid {
+    @apply btn bg-accent text-white hover:bg-accent-dark;
+  }
+
+  .btn-dark {
+    @apply btn bg-black text-white hover:bg-bg-raised;
+  }
+
+  .btn-outline {
+    @apply btn border border-white/30 text-ink hover:border-accent hover:text-accent;
+  }
+
+  .btn-outline-accent {
+    @apply btn border border-accent text-accent hover:bg-accent hover:text-white;
+  }
+
+  .btn-nav {
+    @apply inline-flex items-center justify-center gap-2 font-heading font-semibold
+      uppercase tracking-wide text-sm px-5 py-2 border border-accent bg-transparent text-white
+      transition-colors duration-[250ms] ease-in-out hover:bg-accent hover:text-white;
+  }
+}
