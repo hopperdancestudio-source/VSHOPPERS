@@ -65,6 +65,8 @@ export const siteSettings: SiteSettings = {
   ctaHeading: "Ready to Move?",
   ctaBtnLabel: "Book Your Spot",
   ctaWatermark: "MOVE",
+  paymentModes: "Cash, UPI, Card, Bank Transfer",
+  batchDays: "3 Days, 5 Days, Weekend",
 };
 
 export const navLinks: NavLink[] = [

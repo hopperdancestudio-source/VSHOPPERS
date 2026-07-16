@@ -38,6 +38,8 @@ export interface SiteSettings {
   ctaHeading: string;
   ctaBtnLabel: string;
   ctaWatermark: string;
+  paymentModes: string;
+  batchDays: string;
 }
 
 export interface NavLink {
@@ -246,4 +248,48 @@ export interface PageHeroConfig {
   revealAnimation: "None" | "Fade" | "Slide Up" | "Slide Left" | "Zoom" | "Reveal";
   showScrollIndicator: boolean;
 }
+
+export interface RegistrationFormValues {
+  studentName: string;
+  parentName: string;
+  mobile: string;
+  email?: string;
+  dob: string;
+  age: number;
+  joiningDate: string;
+  danceStyle: string;
+  batchTime: string;
+  package: string;
+  paymentMode: string;
+  batchDays: string;
+  emergencyContact?: string;
+  medicalCondition?: string;
+  notes?: string;
+  agreement: boolean;
+}
+
+export interface StudentRegistration extends RegistrationFormValues {
+  id: string;
+  registrationNo: string;
+  paymentStatus: "Pending" | "Partial" | "Paid";
+  status: "Pending" | "Contacted" | "Confirmed" | "Active" | "Completed" | "Cancelled";
+  internalNotes?: string;
+  viewed: boolean;
+  deletedAt?: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface RegistrationStatusHistory {
+  id: string;
+  registrationId: string;
+  changedBy: string;
+  oldStatus?: string | null;
+  newStatus?: string | null;
+  oldPaymentStatus?: string | null;
+  newPaymentStatus?: string | null;
+  internalNotes?: string | null;
+  createdAt: string;
+}
+
 

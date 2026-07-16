@@ -109,6 +109,8 @@ export async function getSiteSettings(): Promise<SiteSettings> {
       ctaHeading: data.cta_heading,
       ctaBtnLabel: data.cta_btn_label,
       ctaWatermark: data.cta_watermark,
+      paymentModes: data.payment_modes ?? "Cash, UPI, Card, Bank Transfer",
+      batchDays: data.batch_days ?? "3 Days, 5 Days, Weekend",
     };
   }, placeholder.siteSettings);
 }

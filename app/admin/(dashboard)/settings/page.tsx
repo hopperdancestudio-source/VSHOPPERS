@@ -45,6 +45,11 @@ interface SocialFormValues {
   websiteUrl: string;
 }
 
+interface RegistrationsConfigFormValues {
+  paymentModes: string;
+  batchDays: string;
+}
+
 interface StudioHoursDb {
   id: string;
   label: string;
@@ -94,6 +99,10 @@ const socialFields: FieldConfig<SocialFormValues>[] = [
   { name: "websiteUrl", label: "Website URL (Optional)", type: "text", placeholder: "https://yourstudio.com" },
 ];
 
+const registrationsConfigFields: FieldConfig<RegistrationsConfigFormValues>[] = [
+  { name: "paymentModes", label: "Payment Modes (comma-separated list)", type: "text" },
+  { name: "batchDays", label: "Batch Days (comma-separated list)", type: "text" },
+];
 
 const hoursFields: FieldConfig<Omit<StudioHoursDb, "id">>[] = [
   { name: "label", label: "Day Range (e.g. MON – FRI)", type: "text" },
@@ -199,6 +208,16 @@ export default async function AdminSettingsPage() {
         />
       </AdminSectionCard>
 
+      <AdminSectionCard title="Admissions Configuration" description="Customize form options for payment methods and batch schedules.">
+        <SingletonForm<RegistrationsConfigFormValues>
+          fields={registrationsConfigFields}
+          initialData={{
+            paymentModes: settings.paymentModes,
+            batchDays: settings.batchDays,
+          }}
+          onSave={saveSettings}
+        />
+      </AdminSectionCard>
 
       <AdminSectionCard title="Studio Hours">
         <SimpleListEditor<StudioHoursDb>

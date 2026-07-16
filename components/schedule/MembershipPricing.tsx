@@ -56,13 +56,13 @@ export function MembershipPricing({ plans }: { plans: MembershipPlan[] }) {
                 </ul>
 
                 <Link
-                  href="/contact"
+                  href="/register"
                   className={clsx(
-                    "mt-10 text-center",
+                    "mt-10 text-center font-heading text-xs font-semibold uppercase tracking-wider",
                     plan.highlighted ? "btn-solid" : "btn border border-white/30 text-ink hover:border-accent hover:text-accent"
                   )}
                 >
-                  {plan.ctaLabel}
+                  REGISTER NOW
                 </Link>
               </motion.div>
             ))}

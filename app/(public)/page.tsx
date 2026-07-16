@@ -37,7 +37,7 @@ export default async function HomePage() {
       <CTABanner
         watermarkWord={settings.ctaWatermark}
         heading={settings.ctaHeading}
-        primaryCta={{ label: settings.ctaBtnLabel, href: "/contact" }}
+        primaryCta={{ label: "REGISTER NOW", href: "/register" }}
         contactRow={[
           { label: "phone", value: settings.phone },
           { label: "social", value: settings.instagramUrl ? settings.instagramUrl.replace(/https?:\/\/(www\.)?instagram\.com\//, "@").replace(/\/$/, "") : "" },

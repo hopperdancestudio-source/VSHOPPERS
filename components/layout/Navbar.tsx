@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -35,7 +36,14 @@ export function Navbar({ settings }: { settings: SiteSettings }) {
     >
       <div className="container-base flex h-full items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <span className="h-6 w-6 bg-accent" aria-hidden />
+          <Image
+            src="/logo.png"
+            alt="VS Logo"
+            width={28}
+            height={28}
+            className="h-7 w-auto object-contain shrink-0"
+            priority
+          />
           <span className="font-display text-xl tracking-wide text-ink">
             {settings.studioName.toUpperCase()}
           </span>
@@ -59,8 +67,8 @@ export function Navbar({ settings }: { settings: SiteSettings }) {
           })}
         </nav>
 
-        <Link href="/contact" className="hidden md:inline-flex">
-          <span className="btn-nav">Join a Class</span>
+        <Link href="/register" className="hidden md:inline-flex">
+          <span className="btn-nav">REGISTER NOW</span>
         </Link>
 
         <button
@@ -90,8 +98,8 @@ export function Navbar({ settings }: { settings: SiteSettings }) {
               {link.label}
             </Link>
           ))}
-          <Link href="/contact" className="btn-nav w-full">
-            Join a Class
+          <Link href="/register" className="btn-nav w-full">
+            REGISTER NOW
           </Link>
         </div>
       </motion.nav>

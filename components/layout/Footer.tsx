@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { SiteSettings } from "@/lib/types";
 import { navLinks } from "@/data/placeholder";
 import { FaInstagram, FaYoutube, FaWhatsapp, FaFacebook } from "react-icons/fa";
@@ -12,7 +13,13 @@ export function Footer({ settings }: { settings: SiteSettings }) {
       <div className="container-base grid grid-cols-1 gap-12 pb-16 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <Link href="/" className="mb-4 flex items-center gap-3">
-            <span className="h-5 w-5 bg-accent" aria-hidden />
+            <Image
+              src="/logo.png"
+              alt="VS Logo"
+              width={24}
+              height={24}
+              className="h-6 w-auto object-contain shrink-0"
+            />
             <span className="font-display text-lg tracking-wide text-ink">
               {settings.studioName.toUpperCase()}
             </span>
@@ -132,8 +139,8 @@ export function Footer({ settings }: { settings: SiteSettings }) {
               </li>
             )}
             <li className="mt-1">
-              <Link href="/contact" className="hover:text-ink font-semibold">
-                Book a Free Trial
+              <Link href="/register" className="hover:text-ink font-semibold">
+                REGISTER NOW
               </Link>
             </li>
           </ul>

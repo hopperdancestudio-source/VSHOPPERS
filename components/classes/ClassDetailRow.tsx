@@ -43,10 +43,10 @@ export function ClassDetailRow({ item }: { item: ClassStyle }) {
           </div>
 
           <Link
-            href="/contact"
+            href="/register"
             className="group mt-8 inline-flex items-center gap-2 font-heading text-sm font-semibold uppercase tracking-wide text-accent"
           >
-            Book This Class
+            REGISTER NOW
             <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />
           </Link>
         </Reveal>

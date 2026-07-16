@@ -25,7 +25,7 @@ export default async function GalleryPage() {
       <CTABanner
         watermarkWord={settings.ctaWatermark}
         heading={settings.ctaHeading}
-        primaryCta={{ label: settings.ctaBtnLabel, href: "/contact" }}
+        primaryCta={{ label: "REGISTER NOW", href: "/register" }}
         secondaryCta={{ label: "View Schedule", href: "/schedule" }}
         contactRow={[
           { label: "call us", value: settings.phone },
