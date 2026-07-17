@@ -154,10 +154,10 @@ export function AdminShell({
       <div className="flex h-20 flex-col justify-center border-b border-white/10 px-6 gap-0.5 shrink-0">
         <div className="flex items-center gap-2">
           <Image
-            src="/logo.png"
+            src="/vs-logo.png"
             alt="VS Logo"
-            width={20}
-            height={20}
+            width={171}
+            height={211}
             className="h-5 w-auto object-contain shrink-0"
           />
           <span className="font-heading text-base font-bold uppercase tracking-wider text-ink">STUDIO ADMIN</span>

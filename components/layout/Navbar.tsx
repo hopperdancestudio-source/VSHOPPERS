@@ -37,15 +37,15 @@ export function Navbar({ settings }: { settings: SiteSettings }) {
       <div className="container-base flex h-full items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/logo.png"
+            src="/vs-logo.png"
             alt="VS Logo"
-            width={28}
-            height={28}
-            className="h-7 w-auto object-contain shrink-0"
+            width={171}
+            height={211}
+            className="h-7 md:h-9 w-auto object-contain shrink-0"
             priority
           />
           <span className="font-display text-xl tracking-wide text-ink">
-            {settings.studioName.toUpperCase()}
+            {settings.studioName.replace(/^VS\s+/i, "").toUpperCase()}
           </span>
         </Link>
 

@@ -14,14 +14,14 @@ export function Footer({ settings }: { settings: SiteSettings }) {
         <div>
           <Link href="/" className="mb-4 flex items-center gap-3">
             <Image
-              src="/logo.png"
+              src="/vs-logo.png"
               alt="VS Logo"
-              width={24}
-              height={24}
-              className="h-6 w-auto object-contain shrink-0"
+              width={171}
+              height={211}
+              className="h-7 md:h-9 w-auto object-contain shrink-0"
             />
             <span className="font-display text-lg tracking-wide text-ink">
-              {settings.studioName.toUpperCase()}
+              {settings.studioName.replace(/^VS\s+/i, "").toUpperCase()}
             </span>
           </Link>
           <p className="max-w-xs font-body text-sm leading-relaxed text-ink-muted">
